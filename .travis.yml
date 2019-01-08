@@ -1,0 +1,10 @@
+language: fortran
+
+sudo: required
+
+before_install:
+  - sudo apt-get install gfortran
+
+script:
+  - gfortran -fprofile-arcs -ftest-coverage -O0 gs.f90 -o gs
+  - ./gs
